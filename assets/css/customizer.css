@@ -1,0 +1,24 @@
+#prompt-textarea {
+    padding-right: 3.5rem;
+}
+
+#micListener {
+    right: 2.4rem;
+}
+
+#micListener[disabled] {
+    color: rgba(142,142,160,var(--tw-text-opacity));
+    opacity: .4;
+}
+
+#micListener[disabled]:hover {
+    background-color: transparent;
+}
+
+#micListener[disabled] svg path {
+    fill: rgba(142,142,160,var(--tw-text-opacity));
+}
+
+#micListener:not([disabled]) {
+    cursor: pointer;
+}
