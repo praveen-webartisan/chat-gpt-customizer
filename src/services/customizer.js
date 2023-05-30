@@ -114,6 +114,9 @@
                     console.log('Error when trying to get Microphone permission:', err);
                 });
         } else {
+            $('#cgpt-customizer-micListener').attr('disabled', 'disabled');
+            $('#cgpt-customizer-micListener').addClass('cgpt-customizer-hidden-elem');
+
             callback(MIC_PERMISSION_STATUS.UNSUPPORTED);
         }
     }
@@ -124,7 +127,7 @@
                 if (typeof(callback) === 'function') {
                     if (permissionResult == MIC_PERMISSION_STATUS.DENIED) {
                         alert('You have denied the Microphone access. In order to use the Voice text feature, you must grant permission to access your Microphone.');
-                    } else {
+                    } else if (permissionResult != MIC_PERMISSION_STATUS.UNSUPPORTED) {
                         alert('Sorry! Something went wrong.');
                     }
                 }

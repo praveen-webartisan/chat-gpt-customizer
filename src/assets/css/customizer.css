@@ -43,3 +43,7 @@
 *#cgpt-customizer-screenRecordDownloader {
     display: none !important;
 }
+
+*.cgpt-customizer-hidden-elem {
+    display: none !important;
+}
