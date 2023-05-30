@@ -67,7 +67,7 @@
         });
 
         mSpeechRecognition.addEventListener('end', (e) => {
-            $('#micListener').removeAttr('disabled');
+            $('#cgpt-customizer-micListener').removeAttr('disabled');
 
             if ($('#prompt-textarea').val()) {
                 $('#cgpt-customizer-micListener').next().removeAttr('disabled');
