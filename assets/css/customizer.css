@@ -2,23 +2,44 @@
     padding-right: 3.5rem;
 }
 
-#micListener {
+#cgpt-customizer-micListener {
     right: 2.4rem;
 }
 
-#micListener[disabled] {
+#cgpt-customizer-micListener[disabled],
+#cgpt-customizer-screenRecorder[disabled] {
     color: rgba(142,142,160,var(--tw-text-opacity));
     opacity: .4;
 }
 
-#micListener[disabled]:hover {
+#cgpt-customizer-micListener[disabled]:hover,
+#cgpt-customizer-screenRecorder[disabled]:hover {
     background-color: transparent;
 }
 
-#micListener[disabled] svg path {
+#cgpt-customizer-micListener[disabled] svg path,
+#cgpt-customizer-screenRecorder[disabled] svg path {
     fill: rgba(142,142,160,var(--tw-text-opacity));
 }
 
-#micListener:not([disabled]) {
+#cgpt-customizer-micListener:not([disabled]),
+#cgpt-customizer-screenRecorder:not([disabled]) {
     cursor: pointer;
+}
+
+#cgpt-customizer-screenRecorder {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 2147483647;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+*#cgpt-customizer-screenRecordDownloader {
+    display: none !important;
 }
