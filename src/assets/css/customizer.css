@@ -1,15 +1,29 @@
 #prompt-textarea {
-    padding-right: 3.5rem;
+    padding-right: 5rem;
 }
 
 #cgpt-customizer-micListener {
-    right: 2.4rem;
+    position: absolute;
+    right: 3rem;
+    top: 50%;
+    transform: translateY(-50%);
 }
+
+#cgpt-customizer-micListener,
+#cgpt-customizer-screenRecorder {
+    padding: 0.5rem;
+    transition-duration: .15s;
+    transition-property: color,background-color,border-color,text-decoration-color,fill,stroke;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    border-radius: 0.375rem;
+    color: rgb(25, 195, 125);
+ }
 
 #cgpt-customizer-micListener[disabled],
 #cgpt-customizer-screenRecorder[disabled] {
-    color: rgba(142,142,160,var(--tw-text-opacity));
-    opacity: .4;
+    --tw-text-opacity: 1;
+    color: rgba(172,172,190,var(--tw-text-opacity));
+    background-color: transparent;
 }
 
 #cgpt-customizer-micListener[disabled]:hover,
@@ -20,6 +34,12 @@
 #cgpt-customizer-micListener[disabled] svg path,
 #cgpt-customizer-screenRecorder[disabled] svg path {
     fill: rgba(142,142,160,var(--tw-text-opacity));
+}
+
+#cgpt-customizer-micListener:not([disabled]):hover,
+#cgpt-customizer-screenRecorder:not([disabled]):hover {
+    background-color: rgb(25, 195, 125);
+    color: rgb(255, 255, 255);
 }
 
 #cgpt-customizer-micListener:not([disabled]),
