@@ -185,6 +185,7 @@
                 video: {
                     mediaSource: 'screen'
                 },
+                preferCurrentTab: true,
             })
             .then((stream) => {
                 // disable screen record button to avoid double click
@@ -197,6 +198,7 @@
                 const mediaRecorder = new MediaRecorder(stream);
 
                 mediaRecorder.ondataavailable = function(e) {
+                    console.log('ondataavailable', e);
                     if (e.data.size > 0) {
                         // get chunk data
                         recordedChunks.push(e.data);
@@ -204,6 +206,8 @@
                 };
 
                 mediaRecorder.onstop = function() {
+                    // TODO: check why recording stop not detected when user records "This Tab"
+                    console.log('onstop');
                     try {
                         const blob = new Blob(recordedChunks, {
                             type: mimeType,
